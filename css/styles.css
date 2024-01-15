@@ -37,6 +37,8 @@ img{
 /*----------header-----------*/
 .header{
     border-bottom: 1px solid #E7E9FC;
+    background:#FFF;
+        box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 .header-container{
     display: flex;
@@ -63,6 +65,18 @@ span{
     display: flex;
     gap: 40px;
 }
+.navigation-list{
+}
+.navigation-item.current::after{
+    content: '';
+    border-radius: 2px;
+    left: 0;
+        bottom: -1px;
+        background-color:#404BBF;
+        width: 100%;
+            height: 4px;
+            position: absolute;
+}
 .navigation-item{
 color: #2E2F42;
     font-size: 16px;
@@ -71,12 +85,16 @@ color: #2E2F42;
     letter-spacing: 0.02em;
     padding: 24px 0;
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navigation-item:focus,
 .navigation-item:hover,
 .navigation-item:active{
     color: #404BBF;
-    text-decoration: underline;
+}
+.navigation-item.current{
+position: relative;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress{
     display: flex;
@@ -88,6 +106,7 @@ color: #2E2F42;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0.02em;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-item:focus,
 .adress-item:hover{
@@ -103,6 +122,9 @@ color: #2E2F42;
 .hero{
     background: #2E2F42;
     padding: 188px 0;
+    background-image: linear-gradient(
+        to bottom, rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)),url(../images/hero-img.jpg);
 }
 .hero-title {
     color: #FFF;
@@ -157,7 +179,18 @@ color: #2E2F42;
         clip: rect(0 0 0 0);
         overflow: hidden;
 }
-
+.components-icon{
+    display: flex;
+    height: 112px;
+    border-radius: 4px;
+        border: 1px solid #8E8F99;
+        background:#F4F4FD;
+        margin-bottom: 8px;
+        justify-content: center;
+        align-items: center;
+}
+.components-icon-style{
+}
 .components-title {
     color: #2E2F42;
         font-size: 20px;
@@ -220,9 +253,27 @@ color: #2E2F42;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0.02em; 
+        margin-bottom: 8px;
 }
 .team-description{
     padding: 32px 0;
+}
+.team-icon-bloc{
+    display: flex;
+    background-color: #4D5AE5;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.team-bloc-for-icon{
+    display: flex;
+    gap: 24px;
+    margin: 0 16px;
+}
+.team-icon{
+    fill: #F4F4FD;
 }
 /*--------------PORTFOLIO----------*/
 
@@ -274,9 +325,47 @@ color: #2E2F42;
     background-color: #FFFFFF;
     width: calc((100% - 48px) / 3);
 }
+.portfolio-container-hover{
+    position: absolute;
+    background-color: #4D5AE5;
+    top: 0;
+    height: 100%;
+    transform: translateY(100%);
+}
+.portfolio-text-hover{
+    color:#F4F4FD;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding: 40px 32px;
+}
+.portfolio-box{
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-points:hover .portfolio-container-hover{
+    transform: translateY(0);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-points:hover{
+    cursor: pointer;
+}
+.portfolio-points:hover .portfolio-border{
+    border: 1px solid #F4F4FD;
+        background: #FFF;
+        box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
 /*--------------FOOTER----------*/
 
 .footer {background:#2E2F42;}
+
+.footer-box{
+    display: flex;
+}
 
 .footer-text {
     color: #F4F4FD;
@@ -303,3 +392,32 @@ color: #2E2F42;
 .footer{
     padding: 100px 0;
 }
+.footter-icon-title{
+    color: #FFF;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        margin-bottom: 16px;    
+}
+.footer-icon-bloc {
+    display: flex;
+    background-color: #4D5AE5;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-bloc-for-icon {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-icon {
+    fill: #F4F4FD;
+}
+    .footer-media-bloc{
+margin-left: 120px;
+    }
