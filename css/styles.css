@@ -281,6 +281,7 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon-link:hover,
 .team-icon-link:focus{
@@ -343,27 +344,28 @@ transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .portfolio-points:hover{
 box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
-.portfolio-points:hover .portfolio-text{
-    transform: translateY(0%);
-}
-.portfolio-container-hover{
-    position: absolute;
-    background-color: #4D5AE5;
-    top: 0;
-    height: 100%;
-    transform: translateY(100%);
+
+.portfolio-box{
+    position: relative;
+    overflow: hidden;
 }
 .portfolio-text-hover{
+    position: absolute;
+    top: 0;
     color:#F4F4FD;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.5;
         letter-spacing: 0.02em;
         padding: 40px 32px;
+        background-color: #4D5AE5;
+        height: 100%;
+        width: 100%;
+        transform: translateY(100%);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-box{
-    position: relative;
-    overflow: hidden;
+.portfolio-points:hover .portfolio-text-hover{
+    transform: translateY(0);
 }
 /*--------------FOOTER----------*/
 
@@ -371,8 +373,12 @@ box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47,
 
 .footer-box{
     display: flex;
+    align-items: baseline;
 }
 
+.footer-container{
+    margin-right: 120px;
+}
 .footer-text {
     color: #F4F4FD;
         font-size: 16px;
@@ -406,24 +412,33 @@ box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47,
         letter-spacing: 0.02em;
         margin-bottom: 16px;    
 }
-.footer-icon-bloc {
-    display: flex;
-    background-color: #4D5AE5;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-}
 
-.footer-bloc-for-icon {
+.footer-icon-list {
     display: flex;
     gap: 16px;
+}
+
+.footer-icon-item {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-icon-link {
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-icon-link:hover,
+.footer-icon-link:focus {
+    background-color: #31d0aa;
 }
 
 .footer-icon {
     fill: #F4F4FD;
 }
-    .footer-media-bloc{
-margin-left: 120px;
-    }
